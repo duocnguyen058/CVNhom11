@@ -1,0 +1,287 @@
+/* Định nghĩa biến màu sắc mặc định (Light Mode) */
+:root {
+  --background-color-primary: #121212;
+  --background-color-secondary: #1e1e1e;
+  --text-color-primary: white;
+  --text-color-secondary: #aaa;
+  --card-hover-shadow: rgba(255, 255, 255, 0.2);
+  --banner-gradient-start: #4a0033;
+  --banner-gradient-end: #73264d;
+  --footer-bg-color: #181818;
+  --button-bg: #f0f0f0;
+  --button-text: #333;
+  --input-bg: #333; /* Màu nền input */
+  --input-text: white; /* Màu chữ input */
+  --input-placeholder: #ccc; /* Màu placeholder input */
+  --input-border: #555; /* Màu viền input */
+  --nav-button-bg: rgba(255, 255, 255, 0.2); /* Thêm biến cho màu nút điều hướng */
+  --nav-button-text: white; /* Thêm biến cho màu chữ nút điều hướng */
+}
+
+/* Biến màu sắc cho Dark Mode */
+body.dark-mode {
+  --background-color-primary: #f0f0f0;
+  --background-color-secondary: #ffffff;
+  --text-color-primary: #333;
+  --text-color-secondary: #555;
+  --card-hover-shadow: rgba(0, 0, 0, 0.2);
+  --banner-gradient-start: #c3e0e5;
+  --banner-gradient-end: #a4c3b2;
+  --footer-bg-color: #e0e0e0;
+  --button-bg: #333;
+  --button-text: white;
+  --input-bg: #f5f5f5;
+  --input-text: #333;
+  --input-placeholder: #777;
+  --input-border: #ccc;
+  --nav-button-bg: rgba(0, 0, 0, 0.3); /* Màu nút điều hướng trong Dark Mode */
+  --nav-button-text: white;
+}
+
+/* Áp dụng biến màu sắc */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden; /* Ẩn thanh cuộn dọc toàn trang */
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang toàn trang, sẽ dùng cuộn custom cho cv-list */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color-primary);
+  color: var(--text-color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.banner {
+  background: linear-gradient(to right, var(--banner-gradient-start), var(--banner-gradient-end));
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.banner h1 {
+    color: var(--text-color-primary);
+}
+
+/* Container cho carousel và nút điều hướng */
+.cv-carousel-container {
+    position: relative;
+    padding: 40px 20px; /* Padding tổng thể, bao gồm cả khoảng trống cho nút */
+    display: flex; /* Dùng flexbox để sắp xếp nút và list */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang (khi có đủ chỗ) */
+}
+
+.cv-list {
+  display: flex;
+  justify-content: center; /* Vẫn căn giữa khi màn hình lớn */
+  gap: 20px; /* Giảm khoảng cách giữa các thẻ nếu 30px là quá lớn */
+  flex-wrap: wrap; /* Mặc định cho phép xuống dòng trên màn hình lớn */
+  overflow-x: hidden; /* Giữ hidden để JS kiểm soát cuộn ngang */
+  scroll-behavior: smooth; /* Cuộn mượt mà */
+  padding: 0 10px; /* Padding nhẹ cho các thẻ ở rìa */
+}
+
+.cv-card {
+  background-color: var(--background-color-secondary);
+  border-radius: 15px;
+  flex-basis: 180px; /* Kích thước cơ sở: mỗi card sẽ cố gắng có chiều rộng 180px */
+  max-width: 200px; /* Đảm bảo nó không quá lớn, ngay cả khi flex-grow */
+  flex-grow: 1; /* Cho phép card giãn ra để lấp đầy không gian trống nếu có */
+  flex-shrink: 1; /* Cho phép card co lại nếu không đủ không gian, nhưng không dưới min-width */
+  min-width: 180px; /* Đảm bảo thẻ không nhỏ hơn 180px trên desktop */
+
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color-primary);
+}
+
+.cv-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--card-hover-shadow);
+}
+
+.cv-image-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.cv-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: var(--footer-bg-color);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: var(--text-color-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* CSS cho nút chuyển đổi Dark Mode */
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Đảm bảo màu liên kết thay đổi */
+.cv-card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* CSS cho thanh tìm kiếm */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+#cvSearchInput {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--input-border);
+    border-radius: 25px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font-size: 1em;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#cvSearchInput::placeholder {
+    color: var(--input-placeholder);
+}
+
+#cvSearchInput:focus {
+    border-color: #a4c3b2;
+    box-shadow: 0 0 5px rgba(164, 195, 178, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--input-placeholder);
+    transition: color 0.3s ease;
+}
+
+/* CSS cho nút điều hướng (mũi tên) */
+.nav-button {
+    background-color: var(--nav-button-bg);
+    color: var(--nav-button-text);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex; /* Mặc định vẫn là flex để icon hiển thị đúng */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Đảm bảo nút nằm trên các thẻ CV */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-button:hover {
+    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Mặc định ẩn nút điều hướng trên desktop, JS sẽ kiểm soát hiển thị */
+.nav-button {
+    display: none;
+}
+
+
+/* Media Query để điều chỉnh bố cục và kích hoạt chức năng cuộn ngang khi màn hình nhỏ */
+@media (max-width: 900px) { /* breakpoint cho tablet ngang/lớn */
+    .cv-list {
+        justify-content: flex-start; /* Khi màn hình nhỏ thì bắt đầu từ trái thay vì căn giữa */
+    }
+}
+
+@media (max-width: 768px) { /* Màn hình điện thoại/tablet nhỏ */
+    .cv-list {
+        flex-wrap: nowrap; /* <--- QUAN TRỌNG: NGĂN KHÔNG CHO XUỐNG DÒNG */
+        justify-content: flex-start; /* Đảm bảo các thẻ bắt đầu từ trái */
+        padding-bottom: 20px; /* Thêm padding dưới để tránh nội dung bị che */
+    }
+
+    .cv-card {
+        flex-basis: 160px; /* Kích thước nhỏ hơn trên di động */
+        min-width: 160px; /* Đảm bảo không co lại quá nhỏ */
+        max-width: 160px; /* Đảm bảo kích thước cố định khi cuộn */
+        flex-grow: 0; /* KHÔNG CHO PHÉP GIÃN RA KHI CUỘN NGANG */
+        flex-shrink: 0; /* KHÔNG CHO PHÉP CO LẠI KHI CUỘN NGANG */
+    }
+
+    /* Vị trí nút điều hướng hơi sát mép hơn trên mobile */
+    .prev-button {
+        left: 0px;
+    }
+    .next-button {
+        right: 0px;
+    }
+}
+
+@media (max-width: 480px) { /* Màn hình điện thoại rất nhỏ */
+    .cv-card {
+        flex-basis: 140px; /* Nhỏ hơn nữa cho màn hình rất nhỏ */
+        min-width: 140px;
+        max-width: 140px;
+    }
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}

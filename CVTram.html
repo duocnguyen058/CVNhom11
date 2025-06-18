@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tram Portfolio</title>
+  <link rel="stylesheet" href="css/CVTram.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <h2 class="logo">Portfolio</h2>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#Project">Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="home" id="home">
+    <div class="content">
+      <!-- Giới thiệu bản thân, tên và mô tả ngắn -->
+      <h3>Hello, It's Me</h3>
+      <h1>Nguyễn Thị Bích Trâm</h1>
+      <h3>And I'm a <span class="typing"></span></h3>
+      <p>I'm an IT student passionate about frontend development and UI design. I love building clean, modern, and user-friendly websites while constantly learning and improving my skills.</p>
+      <div class="social">
+         <!-- Icon mạng xã hội liên kết ngoài -->
+        <a href="https://www.facebook.com/share/1GDRV7Vqqy/"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com/tramntb1633"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/b.trm_237?igsh=OW5kb3lwZG53eHdt"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+      </div>
+       <!-- Nút dẫn đến phần "About Me" -->
+      <a href="#about" class="btn">More About Me</a>
+    </div>
+    <!-- Ảnh đại diện cá nhân -->
+    <div class="avatar">
+      <div class="glow">
+        <img src="images/Tram.jpg" alt="avatar" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT: Phần giới thiệu chi tiết -->
+  <section class="about" id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+    <div class="about-container">
+      <div class="about-left">
+        <div class="glow-circle">
+          <img src="images/Tram.jpg" alt="about me" />
+        </div>
+      </div>
+      <div class="about-right">
+        <!-- Các nút tab chuyển nội dung -->
+        <div class="about-tabs">
+          <button class="tab-btn active" data-tab="profile">Profile</button>
+          <button class="tab-btn" data-tab="languages">Languages</button>
+          <button class="tab-btn" data-tab="hobbies">Hobbies</button>
+          <button class="tab-btn" data-tab="certificates">Certificates & Awards</button>
+        </div>
+        <div class="tab-content" id="profile">
+           <!-- Thông tin cá nhân chi tiết -->
+          <h3 class="hello-text">Hello,</h3>
+          <p>I am Bích Trâm, currently a student at Ho Chi Minh City University of Transport, majoring in Information Technology.</p>
+          <div class="info">
+            <p><strong>Name:</strong> Nguyễn Thị Bích Trâm</p>
+            <p><strong>Age:</strong> 20 years old</p>
+            <p><strong>Address:</strong> Ho Chi Minh City</p>
+            <p><strong>Contact:</strong> 0356 695 851</p>
+          </div>
+        </div>
+        <div class="tab-content hidden" id="languages">
+          <!-- Danh sách ngôn ngữ biết sử dụng -->
+          <ul>
+            <li>Vietnamese (native)</li>
+            <li>English (intermediate)</li>
+            <li>Spanish (intermediate)</li>
+          </ul>
+        </div>
+        <div class="tab-content hidden" id="hobbies">
+          <!-- Sở thích cá nhân -->
+          <ul>
+            <li>Reading books</li>
+            <li>Photography</li>
+            <li>Traveling</li>
+            <li>Listening to music</li>
+          </ul>
+        </div>
+        <div class="tab-content hidden" id="certificates">
+          <!-- Chứng chỉ và giải thưởng đạt được -->
+          <ul>
+            <li>MOS Computer Science Certificate</li>
+            <li>First Prize in the School Badminton Competition (2019)</li>
+            <li>First Prize in the District Tug of War Competition (2020)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS: Kỹ năng cá nhân -->
+  <section class="skills" id="skills">
+    <h2 class="heading blink">My <span>Skills</span></h2>
+    <div class="skills-container">
+      <!-- Technical Skills -->
+      <div class="technical-skills">
+        <!-- Thanh tiến độ mô tả trình độ kỹ năng -->
+        <h3>Technical Skills</h3>
+        <div class="bar"><i class="fab fa-html5"></i> HTML <span>90%</span>
+          <div class="progress"><div style="width: 90%"></div></div>
+        </div>
+        <div class="bar"><i class="fab fa-css3-alt"></i> CSS <span>80%</span>
+          <div class="progress"><div style="width: 80%"></div></div>
+        </div>
+        <div class="bar"><i class="fab fa-js-square"></i> JavaScript <span>70%</span>
+          <div class="progress"><div style="width: 70%"></div></div>
+        </div>
+        <div class="bar"><i class="fas fa-code"></i> Python <span>65%</span>
+          <div class="progress"><div style="width: 65%"></div></div>
+        </div>
+        <div class="bar"><i class="fas fa-laptop-code"></i> C++ <span>60%</span>
+          <div class="progress"><div style="width: 60%"></div></div>
+        </div>
+      </div>
+
+      <!-- Professional Skills -->
+      <div class="professional-skills">
+        <!-- Biểu đồ tròn thể hiện phần trăm kỹ năng -->
+        <h3>Professional Skills</h3>
+        <div class="radial-bars">
+          <div class="radial-bar">
+            <svg viewBox="0 0 100 100">
+              <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+              <circle class="path path-1" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="percentage">90%</div>
+            <div class="label">Creativity</div>
+          </div>
+          <div class="radial-bar">
+            <svg viewBox="0 0 100 100">
+              <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+              <circle class="path path-2" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="percentage">85%</div>
+            <div class="label">Communication</div>
+          </div>
+          <div class="radial-bar">
+            <svg viewBox="0 0 100 100">
+              <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+              <circle class="path path-3" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="percentage">80%</div>
+            <div class="label">Teamwork</div>
+          </div>
+          <div class="radial-bar">
+            <svg viewBox="0 0 100 100">
+              <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+              <circle class="path path-4" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="percentage">75%</div>
+            <div class="label">Problem Solving</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS: Dự án đã làm -->
+  <section class="projects" id="Project">
+    <h2 class="heading">My <span>Projects</span></h2>
+    <p class="subheading">Here are few of my worked projects.</p>
+
+    <div class="project-container">
+      <!-- Project 1 -->
+      <div class="project-box">
+        <div class="project-info">
+          <h3>Rock-Paper-Scissors Game</h3>
+          <div class="tech-icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+          </div>
+          <p class="platform"><i class="fas fa-desktop"></i> <i class="fas fa-tablet-alt"></i> <i class="fas fa-mobile-alt"></i> WEB-BASED</p>
+          <p class="description">
+            A responsive web-based game built with HTML, CSS, and JavaScript. Users play against the computer by selecting rock, paper, or scissors. The game features real-time results, interactive animations, and mobile-friendly design.
+          </p>
+          <a href="#" class="demo-btn"><i class="fas fa-play"></i> In Progress</a>
+        </div>
+        <div class="project-image">
+          <img src="images/Rock-Paper-Scissors-Game.jpg" alt="Rock Paper Scissors Game">
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-box">
+        <div class="project-info">
+          <h3>Puzzle Game</h3>
+          <div class="tech-icons">
+            <i class="fas fa-code" title="C++"></i>
+          </div>
+          <p class="platform"><i class="fas fa-desktop"></i> <i class="fas fa-mobile-alt"></i> VSCODE</p>
+          <p class="description">
+            A command-line puzzle game built in C++. Players arrange pieces to form a complete image using keyboard inputs. Still under development with more features planned.
+          </p>
+          <a href="https://github.com/tramntb1633/Pulzze-Game" class="demo-btn"><i class="fas fa-play"></i> Demo</a>
+        </div>
+        <div class="project-image">
+          <img src="images/Pulzze Game.jpg" alt="Puzzle Game">
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-box">
+        <div class="project-info">
+          <h3>Lucky Wheel</h3>
+          <div class="tech-icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-react"></i>
+          </div>
+          <p class="platform"><i class="fas fa-desktop"></i> <i class="fas fa-mobile-alt"></i> WEB-BASED</p>
+          <p class="description">
+            A spin-the-wheel game using HTML, CSS, JavaScript, and React. Users click to spin and get random rewards. Features sound, animation, and responsive UI.
+          </p>
+          <a href="https://github.com/Humanoid1266/Vongquaymayman" class="demo-btn"><i class="fas fa-play"></i> In Progress</a>
+        </div>
+        <div class="project-image">
+          <img src="images/lucky-wheel.jpg" alt="Lucky Wheel Game">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2 class="heading blink">Contact <span>Me</span></h2>
+    <div class="contact-container">
+      <!-- Thông tin cá nhân -->
+      <div class="contact-info">
+        <h3>Let’s connect!</h3>
+        <p>Thank you for visiting my portfolio. If you have any questions, feedback, or collaboration opportunities in programming or IT projects, feel free to reach out!</p>
+        <p><i class="fas fa-envelope"></i> nguyenthibichtram2005qn@gmail.com</p>
+        <p><i class="fas fa-phone"></i> 0356 695 851</p>
+        <div class="contact-social">
+          <!-- Mạng xã hội -->
+          <a href="https://www.facebook.com/share/1GDRV7Vqqy/"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/tramntb1633"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/b.trm_237?igsh=OW5kb3lwZG53eHdt"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <!-- Form liên hệ -->
+      <form class="contact-form" method="POST" action="#">
+        <input class="glow-input" type="text" placeholder="Enter Your Name" required>
+        <input class="glow-input" type="email" placeholder="Enter Your Email" required>
+        <input class="glow-input" type="text" placeholder="Enter Your Subject">
+        <textarea class="glow-input" rows="5" placeholder="Enter Your Message" required></textarea>
+        <button type="submit" class="glow-btn">Submit</button>
+      </form>
+    </div>
+  </section>
+  <!-- Chân trang -->
+  <footer>
+    <p>© 2025 Digital - Nguyễn Thị Bích Trâm</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="js/CV_Tram.js"></script>
+</body>
+</html>
