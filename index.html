@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital CV - Nhóm 11</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital CV - Nhóm 11</title>
 
-  <!-- CSS chính của trang -->
-  <link rel="stylesheet" href="/css/style.css" />
+    <!-- CSS chính của trang -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Font Google: Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Google: Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Thư viện icon Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <!-- Header chứa tiêu đề, ô tìm kiếm và nút chuyển dark mode -->
-  <header class="banner">
-    <h1>Digital CV - Nhóm 11</h1>
+    <!-- Thư viện icon Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header chứa tiêu đề, ô tìm kiếm và nút chuyển dark mode -->
+    <header class="banner">
+      <h1>Digital CV - Nhóm 11</h1>
 
-    <!-- Khung tìm kiếm CV theo tên -->
-    <div class="search-container">
-      <input type="text" id="cvSearchInput" placeholder="Tìm kiếm tên CV..." />
-      <i class="fas fa-search search-icon"></i>
+      <!-- Khung tìm kiếm CV theo tên -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="cvSearchInput"
+          placeholder="Tìm kiếm tên CV..."
+        />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+
+      <!-- Nút bật/tắt chế độ tối -->
+      <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <!-- Vùng chứa danh sách các CV thành viên theo dạng băng chuyền (carousel) -->
+    <div class="cv-carousel-container">
+      <!-- Nút chuyển sang CV trước -->
+      <button class="nav-button prev-button" id="prevBtn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Danh sách các CV -->
+      <section class="cv-list" id="cvList">
+        <!-- CV 1: Nguyễn Quang Được -->
+        <div class="cv-card">
+          <a href="CVDuoc.html" class="cv-image-wrapper">
+            <img src="images/anhNguyenQuangDuoc.jpg" alt="Nguyễn Quang Được" />
+          </a>
+          <h3>Nguyễn Quang Được</h3>
+          <p>Xem CV cá nhân</p>
+        </div>
+
+        <!-- CV 2: Nguyễn Thị Bích Trâm -->
+        <div class="cv-card">
+          <a href="CVTram.html" class="cv-image-wrapper">
+            <img src="images/Tram.jpg" alt="Nguyễn Thị Bích Trâm" />
+          </a>
+          <h3>Nguyễn Thị Bích Trâm</h3>
+          <p>Xem CV cá nhân</p>
+        </div>
+
+        <!-- CV 3: Ngô Trần Mỹ Duyên -->
+        <div class="cv-card">
+          <a href="CVDuyen.html" class="cv-image-wrapper">
+            <img src="images/Duyen.jpg" alt="Ngô Trần Mỹ Duyên" />
+          </a>
+          <h3>Ngô Trần Mỹ Duyên</h3>
+          <p>Xem CV cá nhân</p>
+        </div>
+      </section>
+
+      <!-- Nút chuyển sang CV kế tiếp -->
+      <button class="nav-button next-button" id="nextBtn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
 
-    <!-- Nút bật/tắt chế độ tối -->
-    <button id="darkModeToggle" class="dark-mode-toggle">
-      <i class="fas fa-moon"></i>
-    </button>
-  </header>
+    <!-- Chân trang -->
+    <footer class="footer">
+      <p>© 2025 Digital CV - Nhóm 11</p>
+    </footer>
 
-  <!-- Vùng chứa danh sách các CV thành viên theo dạng băng chuyền (carousel) -->
-  <div class="cv-carousel-container">
-    <!-- Nút chuyển sang CV trước -->
-    <button class="nav-button prev-button" id="prevBtn">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-
-    <!-- Danh sách các CV -->
-    <section class="cv-list" id="cvList">
-      
-      <!-- CV 1: Nguyễn Quang Được -->
-      <div class="cv-card">
-        <a href="CVDuoc.html" class="cv-image-wrapper">
-          <img src="images/anhNguyenQuangDuoc.jpg" alt="Nguyễn Quang Được" />
-        </a>
-        <h3>Nguyễn Quang Được</h3>
-        <p>Xem CV cá nhân</p>
-      </div>
-
-      <!-- CV 2: Nguyễn Thị Bích Trâm -->
-      <div class="cv-card">
-        <a href="CVTram.html" class="cv-image-wrapper">
-          <img src="images/Tram.jpg" alt="Nguyễn Thị Bích Trâm" />
-        </a>
-        <h3>Nguyễn Thị Bích Trâm</h3>
-        <p>Xem CV cá nhân</p>
-      </div>
-
-      <!-- CV 3: Ngô Trần Mỹ Duyên -->
-      <div class="cv-card">
-        <a href="CVDuyen.html" class="cv-image-wrapper">
-          <img src="images/Duyen.jpg"alt="Ngô Trần Mỹ Duyên" />
-        </a>
-        <h3>Ngô Trần Mỹ Duyên</h3>
-        <p>Xem CV cá nhân</p>
-      </div>
-
-    </section>
-
-    <!-- Nút chuyển sang CV kế tiếp -->
-    <button class="nav-button next-button" id="nextBtn">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-
-  <!-- Chân trang -->
-  <footer class="footer">
-    <p>© 2025 Digital CV - Nhóm 11</p>
-  </footer>
-
-  <!-- Script xử lý chức năng tìm kiếm, dark mode, carousel -->
-  <script src="/js/script.js"></script>
-</body>
+    <!-- Script xử lý chức năng tìm kiếm, dark mode, carousel -->
+    <script src="/js/script.js"></script>
+  </body>
 </html>
